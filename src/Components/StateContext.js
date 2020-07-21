@@ -22,7 +22,9 @@ export const StateProvider = props => {
     setTodos(todos.filter(todo => todo !== todos[idx]))
   }
   const clearCompleted = () => {
-    setCompletedList([])
+    console.log("HH")
+    console.log(todos)
+    setTodos([])
   }
 
   return (
@@ -43,7 +45,7 @@ export const StateProvider = props => {
         }}
       >
         <div className="h1">
-          <h1>todos</h1>
+          <h1>One of my very first todo-apps 😉</h1>
         </div>{' '}
         <form onSubmit={addToList}>
           <input
@@ -58,7 +60,7 @@ export const StateProvider = props => {
         {props.children}
         <p id="activeListLength">{activeList.length} items left</p>
         <p>
-          <button onClick={() => clearCompleted}> Clear Completed</button>
+          <button onClick={() => clearCompleted()}>Clear all</button>
         </p>
       </StateContext.Provider>
     </React.Fragment>
